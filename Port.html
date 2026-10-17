@@ -1,422 +1,675 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supratim Ray Chaudhury | Product Portfolio</title>
-    <meta name="description" content="Portfolio of Supratim Ray Chaudhury - Aspiring Product Manager specializing in AI, Data Analytics, and User-Centric Design.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9', // Sky blue
-                            600: '#0284c7',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supratim Ray Chaudhury — Platform & AI Product Manager</title>
+  <meta name="description" content="Platform & Technical Product Manager specializing in agentic AI workflows, shared internal tooling, and 0→1 product execution." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            surface: {
+              50: '#fafafa',
+              100: '#f4f4f5',
+              800: '#18181b',
+              900: '#0f0f12',
+              950: '#09090b',
             }
+          }
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .blob {
-            position: absolute;
-            filter: blur(40px);
-            z-index: -1;
-            opacity: 0.4;
-            animation: move 10s infinite alternate;
-        }
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(20px, -20px) scale(1.1); }
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased relative overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-xl font-bold text-slate-900 tracking-tight">SRC<span class="text-brand-500">.</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition">About</a>
-                    <a href="#experience" class="text-slate-600 hover:text-brand-600 font-medium transition">Experience</a>
-                    <a href="#projects" class="text-slate-600 hover:text-brand-600 font-medium transition">Case Studies</a>
-                    <a href="#skills" class="text-slate-600 hover:text-brand-600 font-medium transition">Skills</a>
-                </div>
-                <div>
-                    <a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full font-medium text-sm hover:bg-slate-800 transition shadow-lg shadow-slate-900/20">
-                        Let's Connect
-                    </a>
-                </div>
-            </div>
+<body class="bg-surface-50 dark:bg-surface-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-400 transition-colors duration-200 grid-bg">
+
+  <!-- Sticky Minimalist Header -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-surface-50/80 dark:bg-surface-950/80 border-b border-zinc-200/80 dark:border-zinc-800/80">
+    <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight text-sm md:text-base flex items-center gap-2">
+        <span>Supratim Ray Chaudhury</span>
+        <span class="hidden sm:inline-block text-xs font-mono text-zinc-400 dark:text-zinc-500">· Platform & AI PM</span>
+      </a>
+
+      <nav class="flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+        <a href="#about" class="hover:text-zinc-900 dark:hover:text-white transition">About</a>
+        <a href="#work" class="hover:text-zinc-900 dark:hover:text-white transition">Work</a>
+        <a href="#how-i-work" class="hover:text-zinc-900 dark:hover:text-white transition hidden sm:inline">How I work</a>
+        <a href="#experience" class="hover:text-zinc-900 dark:hover:text-white transition">Experience</a>
+        <a href="#contact" class="hover:text-zinc-900 dark:hover:text-white transition">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle Theme" class="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition text-xs font-mono">
+          <span class="dark:hidden">🌙</span>
+          <span class="hidden dark:inline">☀️</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pt-16 pb-28 space-y-28">
+
+    <!-- HERO SECTION -->
+    <section class="space-y-8">
+      <!-- Status Bar -->
+      <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+        <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+          📍 Agartala, India
+        </span>
+        <span class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Recent: PM Intern at Bitscale · NIT Agartala '26
+        </span>
+        <span class="px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+          Open to PM / APM roles
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="space-y-4">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.12] text-zinc-900 dark:text-white">
+          Deconstruct the pipeline.<br />
+          Design the safeguards.<br />
+          <span class="text-zinc-400 dark:text-zinc-500">Ship systems that scale.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed pt-2">
+          I build and scale <span class="text-zinc-900 dark:text-zinc-200 font-medium">0→1 products, Agentic AI workflows, shared platform systems,</span> and <span class="text-zinc-900 dark:text-zinc-200 font-medium">high-reliability public & fintech infrastructure</span>.
+        </p>
+      </div>
+
+      <!-- Hero CTAs -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#work" class="px-5 py-2.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium text-sm hover:opacity-90 transition">
+          See the work ↓
+        </a>
+        <a href="#contact" class="px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 font-medium text-sm transition">
+          Get in touch
+        </a>
+        <a href="https://github.com/SupratimRayChaudhury" target="_blank" rel="noopener" class="px-4 py-2.5 text-sm font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition">
+          GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- 01 / ABOUT -->
+    <section id="about" class="space-y-8 scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">01 / About</span>
+        <div class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <div class="md:col-span-2 space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p class="text-zinc-900 dark:text-zinc-100 font-medium text-lg">
+            I learn best by deconstructing messy operational pipelines, talking to users, and turning ambiguous bottlenecks into structured products.
+          </p>
+          <p>
+            With an engineering foundation from <strong class="text-zinc-900 dark:text-zinc-200 font-medium">NIT Agartala</strong>, I operate where platform architecture, AI reliability, and business execution meet. Whether it’s designing human-in-the-loop guardrails for enterprise AI agents or coordinating a 12-member squad for a state e-Governance portal, I focus on systems that don't break under real-world edge cases.
+          </p>
+          <p>
+            Across internships at <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Bitscale, Himitsu Lab, NIC Tripura,</strong> and <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Bluestock Fintech</strong>, I've written 15+ production PRDs, synthesized telemetry from thousands of users, and balanced rapid deployment against long-term modularity.
+          </p>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 relative">
-        <!-- Background blobs -->
-        <div class="blob bg-brand-200 w-72 h-72 rounded-full top-20 -left-10"></div>
-        <div class="blob bg-purple-200 w-72 h-72 rounded-full bottom-20 -right-10 animation-delay-2000"></div>
+        <!-- Snapshot Box -->
+        <div class="p-5 rounded-xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800/90 space-y-4 text-sm">
+          <div>
+            <div class="font-mono text-xs text-zinc-400 uppercase">Current Focus</div>
+            <div class="font-medium text-zinc-900 dark:text-zinc-100 mt-0.5">Platform PM · Agentic AI Workflows · Program Governance</div>
+          </div>
+          <div class="h-px bg-zinc-100 dark:bg-zinc-800"></div>
+          <div>
+            <div class="font-mono text-xs text-zinc-400 uppercase">Education</div>
+            <div class="font-medium text-zinc-900 dark:text-zinc-100 mt-0.5">B.Tech, NIT Agartala</div>
+            <div class="text-xs text-zinc-500">Biotechnology & Biochemical Eng. (2022 – 2026)</div>
+          </div>
+          <div class="h-px bg-zinc-100 dark:bg-zinc-800"></div>
+          <div>
+            <div class="font-mono text-xs text-zinc-400 uppercase">National Highlight</div>
+            <div class="font-medium text-emerald-600 dark:text-emerald-400 mt-0.5">Flipkart Grid 6.0 Qualifier</div>
+            <div class="text-xs text-zinc-500">Ranked Top 50 Nationally (Robotics Track)</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-sm font-semibold mb-6 border border-brand-100">
-                <span class="mr-2">🚀</span> Available to collaborate
+    <!-- 02 / WORK & PRODUCTS -->
+    <section id="work" class="space-y-10 scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">02 / Work</span>
+        <div class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-2xl font-bold tracking-tight">Products & Systems I've Built</h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">End-to-end technical builds and platform architectures taken from discovery to production.</p>
+      </div>
+
+      <!-- Featured Product Cards -->
+      <div class="grid gap-6">
+
+        <!-- Project 1: Financial AI Agent -->
+        <div class="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all space-y-6">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Financial AI Agent Platform</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Lead Builder · 2025</span>
+              </div>
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                Multi-agent market simulation engine analyzing real-time financial feeds with human-in-the-loop decision checkpoints and fallback routines.
+              </p>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-6 leading-tight">
-                Building Products at the intersection of <br class="hidden md:block" />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600">AI & User Experience</span>
-            </h1>
-            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Hi, I'm <strong>Supratim Ray Chaudhury</strong>. I transition complex technical requirements into user-centric product roadmaps. With a background in Data & Engineering, I bridge the gap between business goals and technical execution.
+          </div>
+
+          <!-- Metric Pills (Aditya Style) -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2 border-y border-zinc-100 dark:border-zinc-800/80 py-4">
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-zinc-900 dark:text-white">500+</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">securities tracked</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">78%</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">directional accuracy</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-zinc-900 dark:text-white">30+</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">trader interviews</div>
+            </div>
+          </div>
+
+          <!-- Tags & Actions -->
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Python</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">FastAPI</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">LangChain</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">TensorFlow</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Agentic Orchestration</span>
+            </div>
+            <button onclick="openCaseStudy('financial-agent')" class="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+              Read Case Study →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Landslide Detection Platform -->
+        <div class="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all space-y-6">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Landslide Detection & Early Warning System</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300"> Squad Lead · 2024–2025</span>
+              </div>
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                High-reliability disaster management platform fusing continuous IoT sensor telemetry with satellite imagery feeds and multi-agency escalation protocols.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2 border-y border-zinc-100 dark:border-zinc-800/80 py-4">
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-zinc-900 dark:text-white">5</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">engineers led</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">24/7</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">IoT + satellite sync</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-zinc-900 dark:text-white">Multi-Tier</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">fail-safe alerting</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">IoT Telemetry</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Satellite Imagery</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Machine Learning</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Failure-Mode Mapping</span>
+            </div>
+            <button onclick="openCaseStudy('landslide-system')" class="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+              Read Case Study →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Northeast Crafts E-Commerce -->
+        <div class="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all space-y-6">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Northeast Crafts Marketplace</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">0→1 Build · 2024</span>
+              </div>
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                End-to-end multi-vendor e-commerce platform connecting rural artisans in Northeast India with urban buyers via automated inventory sync and recommendation workflows.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2 border-y border-zinc-100 dark:border-zinc-800/80 py-4">
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-zinc-900 dark:text-white">100+</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">rural artisans onboarded</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">+30%</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">checkout completion</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">+20%</div>
+              <div class="text-xs font-mono text-zinc-500 uppercase">average order value</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">ReactJS</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Node.js</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">MongoDB</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80">Recommendation Engine</span>
+            </div>
+            <button onclick="openCaseStudy('northeast-crafts')" class="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+              Read Case Study →
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Production Shipped Spotlight (Like Aditya's "Now at Better / More Builds" section) -->
+      <div class="pt-6 space-y-4">
+        <h3 class="text-sm font-mono uppercase tracking-wider text-zinc-400">Enterprise & Public Systems Shipped in Production</h3>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 space-y-2">
+            <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">NIC Tripura · e-Governance</div>
+            <div class="font-semibold text-sm">State RTI Portal (10,000+ Requests)</div>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Defined RBAC permission boundaries & multi-tier department routing across a 12-member squad with 100% regulatory compliance.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#projects" class="px-8 py-3.5 bg-brand-600 text-white rounded-lg font-semibold hover:bg-brand-700 transition shadow-lg shadow-brand-500/30 flex items-center justify-center gap-2">
-                    View Case Studies <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/supratim-85512b24a/" target="_blank" class="px-8 py-3.5 bg-white text-slate-700 border border-slate-300 rounded-lg font-semibold hover:bg-slate-50 transition flex items-center justify-center gap-2">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats/Impact Section -->
-    <section class="py-12 bg-white border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl font-bold text-brand-600 mb-1">35%</div>
-                    <div class="text-sm text-slate-500 font-medium">Decision Accuracy Increase</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-brand-600 mb-1">40%</div>
-                    <div class="text-sm text-slate-500 font-medium">Engagement Growth (A/B Tests)</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-brand-600 mb-1">50+</div>
-                    <div class="text-sm text-slate-500 font-medium">User Interviews Conducted</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-brand-600 mb-1">1000+</div>
-                    <div class="text-sm text-slate-500 font-medium">Users Served</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Product Experience</h2>
-            <p class="text-slate-600">My journey from Engineering to Product Management.</p>
-        </div>
-
-        <div class="space-y-12 relative before:content-[''] before:absolute before:left-[19px] md:before:left-1/2 before:top-0 before:bottom-0 before:w-0.5 before:bg-slate-200">
-            
-            <!-- Job 1 (Bitscale) - Left Aligned [NEW] -->
-            <div class="relative flex flex-col md:flex-row gap-8 items-start group">
-                <div class="md:w-1/2 md:text-right md:pr-12 pt-1 order-2 md:order-1">
-                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">Product Management Intern</h3>
-                    <div class="text-brand-600 font-medium mb-1">Bitscale</div>
-                    <div class="text-sm text-slate-400 mb-4">Dec 2025 - Present | Remote</div>
-                    <p class="text-slate-600 mb-4">Driving core product initiatives and assisting in strategic roadmap planning.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 inline-block text-left">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Collaborating with founders, engineering, and GTM teams to define product requirements.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Analyzing user feedback to identify pain points and opportunities for improvement.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Supporting the execution of core product initiatives to ensure alignment with business goals.</li>
-                    </ul>
-                </div>
-                <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-brand-500 rounded-full z-10 flex items-center justify-center order-1 md:order-2">
-                    <i class="fas fa-bolt text-brand-600 text-xs"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-12 order-3 md:order-3 hidden md:block"></div>
-            </div>
-
-            <!-- Job 2 (NIC Tripura) - Right Aligned [Shifted] -->
-            <div class="relative flex flex-col md:flex-row gap-8 items-start group">
-                <div class="md:w-1/2 md:pr-12 hidden md:block order-1"></div>
-                <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-slate-300 group-hover:border-brand-500 transition rounded-full z-10 flex items-center justify-center order-1">
-                    <i class="fas fa-server text-slate-400 group-hover:text-brand-600 text-xs"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-12 pt-1 order-2">
-                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">Backend Developer Intern (e-Gov Product)</h3>
-                    <div class="text-brand-600 font-medium mb-1">National Informatics Centre (NIC) Tripura</div>
-                    <div class="text-sm text-slate-400 mb-4">Jun 2025 - Jul 2025 | Agartala</div>
-                    <p class="text-slate-600 mb-4">Contributed to the development of a large-scale e-Governance portal.</p>
-                    <ul class="text-sm text-slate-600 space-y-2">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Collaborated with a team of 12 to deliver product from conception to pilot.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Scaled system to handle 10,000+ RTI requests via REST APIs.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Implemented JWT auth improving security compliance by 100%.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 3 (Himitsu) - Left Aligned [Shifted] -->
-            <div class="relative flex flex-col md:flex-row gap-8 items-start group">
-                <div class="md:w-1/2 md:text-right md:pr-12 pt-1 order-2 md:order-1">
-                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">AI Product Intern</h3>
-                    <div class="text-brand-600 font-medium mb-1">Himitsu Lab Limited</div>
-                    <div class="text-sm text-slate-400 mb-4">Jan 2025 - Apr 2025 | Remote</div>
-                    <p class="text-slate-600 mb-4">Led the product development of an Agentic AI Framework. Focused on translating complex LLM capabilities into actionable financial insights.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 inline-block text-left">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Defined product roadmap & delivered 3 major releases.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Conducted user research with 50+ financial analysts.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Executed A/B tests resulting in 40% engagement uplift.</li>
-                    </ul>
-                </div>
-                <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-slate-300 group-hover:border-brand-500 transition rounded-full z-10 flex items-center justify-center order-1 md:order-2">
-                    <i class="fas fa-robot text-slate-400 group-hover:text-brand-600 text-xs"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-12 order-3 md:order-3 hidden md:block"></div>
-            </div>
-
-            <!-- Job 4 (Bluestock) - Right Aligned [Shifted] -->
-            <div class="relative flex flex-col md:flex-row gap-8 items-start group">
-                <div class="md:w-1/2 md:pr-12 hidden md:block order-1"></div>
-                <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-slate-300 group-hover:border-brand-500 transition rounded-full z-10 flex items-center justify-center order-1">
-                    <i class="fas fa-chart-line text-slate-400 group-hover:text-brand-600 text-xs"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-12 pt-1 order-2">
-                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">SDE Intern (Product Focus)</h3>
-                    <div class="text-brand-600 font-medium mb-1">Bluestock Fintech</div>
-                    <div class="text-sm text-slate-400 mb-4">Nov 2024 - Dec 2024 | Remote</div>
-                    <p class="text-slate-600 mb-4">Built and launched an IPO analysis platform. Worked directly with founders to define GTM strategy and competitive positioning.</p>
-                    <ul class="text-sm text-slate-600 space-y-2">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Conducted competitive analysis of 5 market leaders.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Created wireframes for 8 new features based on feedback.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Served 1,000+ users with real-time financial data.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 5 (Unified Mentors) - Left Aligned [Shifted] -->
-            <div class="relative flex flex-col md:flex-row gap-8 items-start group">
-                <div class="md:w-1/2 md:text-right md:pr-12 pt-1 order-2 md:order-1">
-                    <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">Data Science Intern</h3>
-                    <div class="text-brand-600 font-medium mb-1">Unified Mentors Pvt. Ltd.</div>
-                    <div class="text-sm text-slate-400 mb-4">May 2024 - Jul 2024 | Remote</div>
-                    <p class="text-slate-600 mb-4">Focused on Business Intelligence and operational efficiency.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 inline-block text-left">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Built BI dashboards tracking 15+ KPIs.</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-500 mt-1"></i> Reduced data processing time by 40%.</li>
-                    </ul>
-                </div>
-                <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-slate-300 group-hover:border-brand-500 transition rounded-full z-10 flex items-center justify-center order-1 md:order-2">
-                    <i class="fas fa-database text-slate-400 group-hover:text-brand-600 text-xs"></i>
-                </div>
-                <div class="md:w-1/2 md:pl-12 order-3 md:order-3 hidden md:block"></div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Projects / Case Studies -->
-    <section id="projects" class="py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Product Case Studies</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Selected projects where I identified a problem, built a solution, and measured the impact.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Case Study 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col">
-                    <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
-                        <i class="fas fa-chart-pie text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Financial AI Agent</h3>
-                    <p class="text-xs font-semibold text-blue-600 tracking-wide uppercase mb-4">FinTech • AI • User Research</p>
-                    
-                    <div class="space-y-4 mb-6 flex-grow">
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE PROBLEM</span>
-                            <p class="text-sm text-slate-600">Retail investors struggle to analyze real-time market trends across 500+ stocks manually.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE SOLUTION</span>
-                            <p class="text-sm text-slate-600">An AI-powered investment simulator utilizing LSTM & Random Forest algorithms.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">IMPACT</span>
-                            <p class="text-sm text-slate-800 font-semibold">Conducted 30+ user interviews to validate fit; achieved 78% prediction accuracy.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col">
-                    <div class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 text-green-600">
-                        <i class="fas fa-satellite-dish text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Landslide Detection System</h3>
-                    <p class="text-xs font-semibold text-green-600 tracking-wide uppercase mb-4">IoT • Disaster Mgmt • GTM</p>
-                    
-                    <div class="space-y-4 mb-6 flex-grow">
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE PROBLEM</span>
-                            <p class="text-sm text-slate-600">Lack of real-time risk assessment for landslide-prone areas in Northeastern India.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE SOLUTION</span>
-                            <p class="text-sm text-slate-600">Integrated IoT sensor data with satellite imagery for early warnings.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">IMPACT</span>
-                            <p class="text-sm text-slate-800 font-semibold">Researched GTM strategy for government adoption; secured pilot funding.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col">
-                    <div class="h-12 w-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 text-orange-600">
-                        <i class="fas fa-shopping-bag text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Northeast Crafts</h3>
-                    <p class="text-xs font-semibold text-orange-600 tracking-wide uppercase mb-4">E-commerce • Analytics</p>
-                    
-                    <div class="space-y-4 mb-6 flex-grow">
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE PROBLEM</span>
-                            <p class="text-sm text-slate-600">Local artisans lacked digital reach, limiting sales to local geography.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">THE SOLUTION</span>
-                            <p class="text-sm text-slate-600">Full-stack marketplace with a recommendation engine.</p>
-                        </div>
-                        <div>
-                            <span class="text-xs font-bold text-slate-400 block mb-1">IMPACT</span>
-                            <p class="text-sm text-slate-800 font-semibold">Optimized conversion funnel (+30% checkout completion); increased AOV by 20%.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col md:flex-row gap-16">
-            <div class="md:w-1/3">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Technical Toolkit</h2>
-                <p class="text-slate-600 mb-8">
-                    As a technical product manager, I speak the language of engineering while focusing on business value. I use data to back every decision.
-                </p>
-                <div class="p-6 bg-slate-900 text-white rounded-xl">
-                    <div class="mb-4">
-                        <h4 class="font-bold text-lg mb-1">Education</h4>
-                        <p class="text-slate-400 text-sm">NIT Agartala</p>
-                        <p class="text-slate-400 text-sm">B.Tech Biotech & Biochemical Eng.</p>
-                        <p class="text-brand-400 text-sm mt-1">CGPA: 7.44</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Achievements</h4>
-                        <ul class="text-slate-400 text-sm space-y-1">
-                            <li>• Flipkart Grid Robotics Qualifier</li>
-                            <li>• 300+ LeetCode Problems Solved</li>
-                            <li>• Walmart Adv. Software Eng. Certified</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <!-- Product Skills -->
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-tasks text-brand-600"></i> Product Management
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">A/B Testing</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">User Research</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Roadmapping</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">GTM Strategy</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Agile/Scrum</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Wireframing (Figma)</span>
-                    </div>
-                </div>
-
-                <!-- Analytics -->
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-chart-bar text-brand-600"></i> Data & Analytics
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">SQL</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Power BI</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Tableau</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Google Analytics</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Pandas/NumPy</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Excel (Advanced)</span>
-                    </div>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="sm:col-span-2">
-                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-code text-brand-600"></i> Engineering Stack
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">Python</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">JavaScript</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">ReactJS</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">Node.js</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">Django</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">TensorFlow</span>
-                        <span class="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-medium">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Footer -->
-    <footer id="contact" class="bg-slate-900 text-slate-300 py-16">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">Ready to drive product impact?</h2>
-            <p class="mb-8 text-slate-400 max-w-lg mx-auto">
-                I am currently looking for Product Analyst or APM roles. Let's discuss how I can leverage data and design to improve your product metrics.
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 space-y-2">
+            <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Himitsu Lab · Agentic AI</div>
+            <div class="font-semibold text-sm">Human-in-the-Loop Evaluation Engine</div>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Interviewed 50+ analysts to ship 3 agent releases and telemetry dashboards, lifting active engagement by 40%.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-                <a href="mailto:supratim1239@gmail.com" class="flex items-center justify-center gap-2 hover:text-white transition">
-                    <i class="fas fa-envelope text-brand-500"></i> supratim1239@gmail.com
-                </a>
-                <a href="tel:+919366994806" class="flex items-center justify-center gap-2 hover:text-white transition">
-                    <i class="fas fa-phone text-brand-500"></i> +91-9366994806
-                </a>
-                <span class="flex items-center justify-center gap-2">
-                    <i class="fas fa-map-marker-alt text-brand-500"></i> Agartala, India
-                </span>
-            </div>
-            
-            <div class="border-t border-slate-800 pt-8 flex justify-center space-x-6">
-                <a href="https://www.linkedin.com/in/supratim-85512b24a/" class="text-2xl hover:text-brand-500 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/SupratimRayChaudhury" class="text-2xl hover:text-brand-500 transition"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-2xl hover:text-brand-500 transition"><i class="fas fa-file-alt"></i></a>
-            </div>
-            <p class="mt-8 text-sm text-slate-600">© 2025 Supratim Ray Chaudhury. All rights reserved.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 space-y-2">
+            <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">Bluestock Fintech · Retail IPO</div>
+            <div class="font-semibold text-sm">IPO Analytics Suite (1,000+ Investors)</div>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Authored 8 comprehensive PRDs and competitive teardowns across 5 fintech players, boosting session retention by 25%.
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <!-- 03 / HOW I WORK -->
+    <section id="how-i-work" class="space-y-10 scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">03 / How I Work</span>
+        <div class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-2xl font-bold tracking-tight">Principles I Ship By</h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">My operating system for managing platform complexity, AI reliability, and cross-functional alignment.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 space-y-2">
+          <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">01.</div>
+          <h3 class="font-semibold text-base">Deconstruct messy pipelines first</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Before writing a PRD, I dig into support logs, usage telemetry, and analyst workflows to locate the exact system bottleneck rather than treating symptoms.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 space-y-2">
+          <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">02.</div>
+          <h3 class="font-semibold text-base">Human-in-the-loop by default</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Autonomous agents fail silently without guardrails. I design explicit evaluation criteria, fallback triggers, and user verification checkpoints where reliability matters.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 space-y-2">
+          <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">03.</div>
+          <h3 class="font-semibold text-base">Balance velocity with modularity</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Shipping fast shouldn't mortgage the platform. I partner closely with backend engineers to evaluate build-vs-buy trade-offs and minimize downstream technical debt.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 space-y-2">
+          <div class="font-mono text-xs text-emerald-600 dark:text-emerald-400">04.</div>
+          <h3 class="font-semibold text-base">Translate across every room</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Whether aligning founders on GTM priorities, backend engineers on API schemas, or civil administrators on regulatory compliance, clear specs keep execution predictable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / EXPERIENCE & SKILLS -->
+    <section id="experience" class="space-y-12 scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">04 / Experience & Stack</span>
+        <div class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight">Where I've Learned by Shipping</h2>
+
+        <div class="divide-y divide-zinc-200 dark:divide-zinc-800/80 border-y border-zinc-200 dark:border-zinc-800/80">
+          
+          <!-- Exp 1 -->
+          <div class="py-6 grid sm:grid-cols-4 gap-2 sm:gap-6 items-start">
+            <div class="font-mono text-xs text-zinc-500 pt-1">Dec 2025 – May 2026</div>
+            <div class="sm:col-span-3 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-semibold text-base text-zinc-900 dark:text-white">Product Management Intern · <span class="text-emerald-600 dark:text-emerald-400">Bitscale (Featherflow Tech)</span></h3>
+                <span class="text-xs font-mono text-zinc-400">Remote</span>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Owned PRDs and technical feature roadmaps across Founders, Backend Engineering, and GTM teams. Analyzed support logs and usage telemetry to resolve recurring system bottlenecks, standardize delivery sprints, and reduce technical debt.
+              </p>
+            </div>
+          </div>
+
+          <!-- Exp 2 -->
+          <div class="py-6 grid sm:grid-cols-4 gap-2 sm:gap-6 items-start">
+            <div class="font-mono text-xs text-zinc-500 pt-1">Jun 2025 – Jul 2025</div>
+            <div class="sm:col-span-3 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-semibold text-base text-zinc-900 dark:text-white">Web Dev & Project Coordination Intern · <span class="text-emerald-600 dark:text-emerald-400">NIC Tripura</span></h3>
+                <span class="text-xs font-mono text-zinc-400">Agartala</span>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Coordinated a 12-member engineering and administrative squad to launch a mission-critical e-Governance portal handling 10,000+ public RTI requests with role-based access control and zero service downtime.
+              </p>
+            </div>
+          </div>
+
+          <!-- Exp 3 -->
+          <div class="py-6 grid sm:grid-cols-4 gap-2 sm:gap-6 items-start">
+            <div class="font-mono text-xs text-zinc-500 pt-1">Jan 2025 – Apr 2025</div>
+            <div class="sm:col-span-3 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-semibold text-base text-zinc-900 dark:text-white">AI Product Intern · <span class="text-emerald-600 dark:text-emerald-400">Himitsu Lab Limited</span></h3>
+                <span class="text-xs font-mono text-zinc-400">Remote</span>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Drove lifecycle execution for an enterprise Agentic AI platform across 3 production releases. Conducted discovery with 50+ analysts, designed human-in-the-loop review mechanisms, and built latency/fallback telemetry dashboards (+40% user engagement).
+              </p>
+            </div>
+          </div>
+
+          <!-- Exp 4 -->
+          <div class="py-6 grid sm:grid-cols-4 gap-2 sm:gap-6 items-start">
+            <div class="font-mono text-xs text-zinc-500 pt-1">Nov 2024 – Dec 2024</div>
+            <div class="sm:col-span-3 space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-semibold text-base text-zinc-900 dark:text-white">Product Management Intern · <span class="text-emerald-600 dark:text-emerald-400">Bluestock Fintech</span></h3>
+                <span class="text-xs font-mono text-zinc-400">Remote</span>
+              </div>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Defined roadmap for an IPO analysis platform serving 1,000+ active retail investors. Executed competitive teardowns of 5 fintech platforms and authored 8 PRDs with wireframes, lifting session retention by 25%.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Categorized Skills Matrix (Aditya 4-Column Style) -->
+      <div class="space-y-6 pt-4">
+        <h3 class="text-lg font-bold tracking-tight">Capabilities & Tooling</h3>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase text-emerald-600 dark:text-emerald-400">Platform & Product</div>
+            <ul class="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>PRD & Technical Specs</li>
+              <li>Shared Services Strategy</li>
+              <li>Multi-Tenant Workflows</li>
+              <li>Build vs. Buy Evaluations</li>
+              <li>Failure-Mode Mapping</li>
+              <li>Demand Prioritization</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase text-emerald-600 dark:text-emerald-400">AI & Data Systems</div>
+            <ul class="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>Agentic Orchestration</li>
+              <li>Human-in-the-Loop Safeguards</li>
+              <li>Model Output Evaluation</li>
+              <li>Prompt Engineering</li>
+              <li>LangChain & TensorFlow</li>
+              <li>Latency & Fallback Telemetry</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase text-emerald-600 dark:text-emerald-400">Engineering & API</div>
+            <ul class="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>Python & FastAPI</li>
+              <li>API & Data Flow Design</li>
+              <li>ReactJS & Node.js</li>
+              <li>SQL & MongoDB</li>
+              <li>Postman & Git</li>
+              <li>IoT & Satellite Feeds</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <div class="font-mono text-xs uppercase text-emerald-600 dark:text-emerald-400">Governance & Analytics</div>
+            <ul class="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>PostHog & Google Analytics</li>
+              <li>Power BI & Tableau</li>
+              <li>Jira & Confluence</li>
+              <li>Agile / Scrum Execution</li>
+              <li>Figma Wireframing</li>
+              <li>Stakeholder Alignment</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Certifications Pill Bar -->
+      <div class="p-5 rounded-xl bg-zinc-100/80 dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-4">
+        <div class="text-xs font-mono uppercase text-zinc-500">Credentials & Honours</div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-3 py-1 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">🏆 Flipkart Grid 6.0 Top 50 Nationally</span>
+          <span class="px-3 py-1 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">Google Project Management Professional</span>
+          <span class="px-3 py-1 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">IBM Project Management Fundamentals</span>
+          <span class="px-3 py-1 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">PMI Project Management Basics</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / CONTACT -->
+    <section id="contact" class="space-y-8 scroll-mt-24 pt-6 border-t border-zinc-200 dark:border-zinc-800">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">05 / Contact</span>
+        <div class="h-px flex-1 bg-zinc-200 dark:bg-zinc-800"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold tracking-tight">Have a messy system or product problem worth solving?</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+            I'm available for full-time Product Management (Platform, AI, Technical PM) and Program Management roles starting 2026. Reach out directly or drop a note.
+          </p>
+          <div class="space-y-2 pt-2 text-sm font-mono">
+            <div>📞 <a href="tel:+919366994806" class="hover:text-emerald-500 transition">+91-9366994806</a></div>
+            <div>📍 Agartala, Tripura, India (Open to Relocation / Remote)</div>
+          </div>
+          <div class="flex gap-4 pt-2 text-sm font-mono">
+            <a href="https://github.com/SupratimRayChaudhury" target="_blank" rel="noopener" class="underline hover:text-emerald-500">GitHub ↗</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="underline hover:text-emerald-500">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Quick Note Form -->
+        <form onsubmit="event.preventDefault(); alert('Thanks for reaching out! Connect this form to Formspree or your email address.');" class="space-y-4 bg-white dark:bg-surface-900 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Name</label>
+            <input type="text" required placeholder="Your name" class="w-full px-3.5 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-emerald-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Email</label>
+            <input type="email" required placeholder="you@company.com" class="w-full px-3.5 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-emerald-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-1">Message</label>
+            <textarea rows="3" required placeholder="Tell me about the role or problem..." class="w-full px-3.5 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-emerald-500"></textarea>
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium text-sm hover:opacity-90 transition">
+            Send Note →
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800/80 py-8 text-center text-xs font-mono text-zinc-500">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 Supratim Ray Chaudhury · Platform & AI Product Builder</div>
+      <div class="flex gap-4">
+        <a href="#about" class="hover:text-zinc-900 dark:hover:text-white">About</a>
+        <a href="#work" class="hover:text-zinc-900 dark:hover:text-white">Work</a>
+        <a href="#experience" class="hover:text-zinc-900 dark:hover:text-white">Experience</a>
+        <a href="#contact" class="hover:text-zinc-900 dark:hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODAL (Mirrors Aditya's Deep-Dive Product Case Study Pages) -->
+  <div id="case-study-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white dark:bg-surface-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+        <div>
+          <span id="modal-tag" class="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase">Product Case Study</span>
+          <h3 id="modal-title" class="text-2xl font-bold mt-1"></h3>
+        </div>
+        <button onclick="closeCaseStudy()" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white font-mono text-lg px-2">✕</button>
+      </div>
+      <div id="modal-body" class="space-y-5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed"></div>
+    </div>
+  </div>
+
+  <!-- Scripts for Theme & Case Study Modals -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Case Study Data (Structured like adityagangwani.me/products/*)
+    const caseStudies = {
+      'financial-agent': {
+        tag: 'AI Agent & Market Simulation · Jan 2025 – Present',
+        title: 'Financial AI Agent Platform',
+        body: `
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">The Problem</h4>
+            <p>Retail and quantitative traders struggle with noisy real-time market feeds and LLM hallucinations when using AI tools for investment synthesis, resulting in low trust during high-volatility sessions.</p>
+          </div>
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">Discovery & User Research</h4>
+            <p>Conducted <strong>30+ discovery interviews</strong> with active traders to map decision bottlenecks, stress-test prompt behavior, and identify exactly where human-in-the-loop verification checkpoints were mandatory.</p>
+          </div>
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">Architecture & Pipeline Design</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Multi-Agent Simulation:</strong> Engineered with Python, FastAPI, LangChain, and TensorFlow to analyze streaming data across 500+ securities.</li>
+              <li><strong>Graceful Degradation:</strong> Built modular API ingestion pipelines and automated fallback routines under high-latency network conditions.</li>
+              <li><strong>Impact:</strong> Achieved <strong>78% directional prediction accuracy</strong> while eliminating unverified hallucinated outputs.</li>
+            </ul>
+          </div>
+        `
+      },
+      'landslide-system': {
+        tag: 'IoT & Disaster Management Infrastructure · Aug 2024 – Present',
+        title: 'Landslide Detection & Early Warning System',
+        body: `
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">The Problem</h4>
+            <p>Hilly regions in Northeast India face recurring landslide hazards, where disconnected sensor networks and delayed manual reporting cost critical evacuation time.</p>
+          </div>
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">Product & Systems Execution</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>Cross-Functional Leadership:</strong> Led a 5-engineer team integrating continuous IoT ground telemetry with satellite imagery feeds.</li>
+              <li><strong>Fail-Safe Alerting:</strong> Mapped end-to-end data ingestion flows, anomaly triggers, and multi-agency escalation protocols for regional disaster management authorities.</li>
+            </ul>
+          </div>
+        `
+      },
+      'northeast-crafts': {
+        tag: 'Multi-Vendor Marketplace · Mar 2024 – Present',
+        title: 'Northeast Crafts E-Commerce Platform',
+        body: `
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">The Problem</h4>
+            <p>Rural artisans in Northeast India lacked digital distribution channels, facing high cart abandonment and manual inventory mismatches when selling to urban buyers.</p>
+          </div>
+          <div>
+            <h4 class="font-mono text-xs uppercase text-zinc-400 mb-1">Solution & Growth Metrics</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>0→1 Marketplace Build:</strong> Architected using ReactJS, Node.js, and MongoDB to onboard <strong>100+ rural artisans</strong>.</li>
+              <li><strong>Checkout & AOV Optimization:</strong> Streamlined checkout flows (+30% completion rate) and shipped an automated recommendation engine that expanded Average Order Value (AOV) by <strong>20%</strong>.</li>
+            </ul>
+          </div>
+        `
+      }
+    };
+
+    function openCaseStudy(id) {
+      const study = caseStudies[id];
+      if (!study) return;
+      document.getElementById('modal-tag').textContent = study.tag;
+      document.getElementById('modal-title').textContent = study.title;
+      document.getElementById('modal-body').innerHTML = study.body;
+      document.getElementById('case-study-modal').classList.remove('hidden');
+    }
+
+    function closeCaseStudy() {
+      document.getElementById('case-study-modal').classList.add('hidden');
+    }
+  </script>
 </body>
 </html>
